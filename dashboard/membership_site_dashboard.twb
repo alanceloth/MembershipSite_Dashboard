@@ -1,0 +1,1965 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20242.24.0613.1930                               -->
+<workbook locale='en_US' original-version='18.1' source-build='2024.2.0 (20242.24.0613.1930)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='members_db' inline='true' name='federated.0qa9kbm0uker3219zb0810dww1r0' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='members' name='textscan.1e1bmk316qjo461aroytk1dxqoqk'>
+            <connection class='textscan' directory='C:/Users/alan_/MembershipSite_Dashboard/data' filename='members.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='content_views.csv' table='[content_views#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+            <column datatype='integer' name='ID' ordinal='0' />
+            <column datatype='integer' name='Member_ID' ordinal='1' />
+            <column datatype='integer' name='Content_ID' ordinal='2' />
+            <column datatype='date' name='View_Date' ordinal='3' />
+            <column datatype='integer' name='View_Duration' ordinal='4' />
+            <column datatype='string' name='Interaction_Type' ordinal='5' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='members.csv' table='[members#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+              <column datatype='integer' name='ID' ordinal='0' />
+              <column datatype='string' name='Name' ordinal='1' />
+              <column datatype='string' name='Email' ordinal='2' />
+              <column datatype='date' name='Signup_Date' ordinal='3' />
+              <column datatype='string' name='Subscription_Type' ordinal='4' />
+              <column datatype='string' name='Status' ordinal='5' />
+              <column datatype='string' name='Country' ordinal='6' />
+              <column datatype='string' name='State' ordinal='7' />
+              <column datatype='string' name='City' ordinal='8' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='content_views.csv' table='[content_views#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+              <column datatype='integer' name='ID' ordinal='0' />
+              <column datatype='integer' name='Member_ID' ordinal='1' />
+              <column datatype='integer' name='Content_ID' ordinal='2' />
+              <column datatype='date' name='View_Date' ordinal='3' />
+              <column datatype='integer' name='View_Duration' ordinal='4' />
+              <column datatype='string' name='Interaction_Type' ordinal='5' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='contents.csv' table='[contents#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+              <column datatype='integer' name='ID' ordinal='0' />
+              <column datatype='string' name='Title' ordinal='1' />
+              <column datatype='string' name='Type' ordinal='2' />
+              <column datatype='date' name='Publication_Date' ordinal='3' />
+              <column datatype='string' name='Author' ordinal='4' />
+              <column datatype='string' name='Category' ordinal='5' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='feedbacks.csv' table='[feedbacks#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+              <column datatype='integer' name='ID' ordinal='0' />
+              <column datatype='integer' name='Member_ID' ordinal='1' />
+              <column datatype='date' name='Feedback_Date' ordinal='2' />
+              <column datatype='integer' name='Rating' ordinal='3' />
+              <column datatype='string' name='Comment' ordinal='4' />
+              <column datatype='string' name='Feedback_Type' ordinal='5' />
+              <column datatype='string' name='Support_Response' ordinal='6' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='site_activities.csv' table='[site_activities#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+              <column datatype='integer' name='ID' ordinal='0' />
+              <column datatype='integer' name='Member_ID' ordinal='1' />
+              <column datatype='datetime' name='Activity_Date' ordinal='2' />
+              <column datatype='string' name='Activity_Type' ordinal='3' />
+              <column datatype='integer' name='Session_Duration' ordinal='4' />
+              <column datatype='string' name='Device' ordinal='5' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='subscriptions.csv' table='[subscriptions#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+              <column datatype='integer' name='ID' ordinal='0' />
+              <column datatype='integer' name='Member_ID' ordinal='1' />
+              <column datatype='date' name='Start_Date' ordinal='2' />
+              <column datatype='date' name='End_Date' ordinal='3' />
+              <column datatype='string' name='Subscription_Status' ordinal='4' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='transactions.csv' table='[transactions#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+              <column datatype='integer' name='ID' ordinal='0' />
+              <column datatype='integer' name='Member_ID' ordinal='1' />
+              <column datatype='date' name='Transaction_Date' ordinal='2' />
+              <column datatype='string' name='Amount' ordinal='3' />
+              <column datatype='string' name='Transaction_Type' ordinal='4' />
+              <column datatype='string' name='Payment_Method' ordinal='5' />
+              <column datatype='string' name='Transaction_Status' ordinal='6' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[Activity_Date]' value='[site_activities.csv].[Activity_Date]' />
+          <map key='[Activity_Type]' value='[site_activities.csv].[Activity_Type]' />
+          <map key='[Amount]' value='[transactions.csv].[Amount]' />
+          <map key='[Author]' value='[contents.csv].[Author]' />
+          <map key='[Category]' value='[contents.csv].[Category]' />
+          <map key='[City]' value='[members.csv].[City]' />
+          <map key='[Comment]' value='[feedbacks.csv].[Comment]' />
+          <map key='[Content_ID]' value='[content_views.csv].[Content_ID]' />
+          <map key='[Country]' value='[members.csv].[Country]' />
+          <map key='[Device]' value='[site_activities.csv].[Device]' />
+          <map key='[Email]' value='[members.csv].[Email]' />
+          <map key='[End_Date]' value='[subscriptions.csv].[End_Date]' />
+          <map key='[Feedback_Date]' value='[feedbacks.csv].[Feedback_Date]' />
+          <map key='[Feedback_Type]' value='[feedbacks.csv].[Feedback_Type]' />
+          <map key='[ID (content_views.csv)]' value='[content_views.csv].[ID]' />
+          <map key='[ID (contents.csv)]' value='[contents.csv].[ID]' />
+          <map key='[ID (feedbacks.csv)]' value='[feedbacks.csv].[ID]' />
+          <map key='[ID (site_activities.csv)]' value='[site_activities.csv].[ID]' />
+          <map key='[ID (subscriptions.csv)]' value='[subscriptions.csv].[ID]' />
+          <map key='[ID (transactions.csv)]' value='[transactions.csv].[ID]' />
+          <map key='[ID]' value='[members.csv].[ID]' />
+          <map key='[Interaction_Type]' value='[content_views.csv].[Interaction_Type]' />
+          <map key='[Member_ID (content_views.csv)]' value='[content_views.csv].[Member_ID]' />
+          <map key='[Member_ID (feedbacks.csv)]' value='[feedbacks.csv].[Member_ID]' />
+          <map key='[Member_ID (site_activities.csv)]' value='[site_activities.csv].[Member_ID]' />
+          <map key='[Member_ID (subscriptions.csv)]' value='[subscriptions.csv].[Member_ID]' />
+          <map key='[Member_ID]' value='[transactions.csv].[Member_ID]' />
+          <map key='[Name]' value='[members.csv].[Name]' />
+          <map key='[Payment_Method]' value='[transactions.csv].[Payment_Method]' />
+          <map key='[Publication_Date]' value='[contents.csv].[Publication_Date]' />
+          <map key='[Rating]' value='[feedbacks.csv].[Rating]' />
+          <map key='[Session_Duration]' value='[site_activities.csv].[Session_Duration]' />
+          <map key='[Signup_Date]' value='[members.csv].[Signup_Date]' />
+          <map key='[Start_Date]' value='[subscriptions.csv].[Start_Date]' />
+          <map key='[State]' value='[members.csv].[State]' />
+          <map key='[Status]' value='[members.csv].[Status]' />
+          <map key='[Subscription_Status]' value='[subscriptions.csv].[Subscription_Status]' />
+          <map key='[Subscription_Type]' value='[members.csv].[Subscription_Type]' />
+          <map key='[Support_Response]' value='[feedbacks.csv].[Support_Response]' />
+          <map key='[Title]' value='[contents.csv].[Title]' />
+          <map key='[Transaction_Date]' value='[transactions.csv].[Transaction_Date]' />
+          <map key='[Transaction_Status]' value='[transactions.csv].[Transaction_Status]' />
+          <map key='[Transaction_Type]' value='[transactions.csv].[Transaction_Type]' />
+          <map key='[Type]' value='[contents.csv].[Type]' />
+          <map key='[View_Date]' value='[content_views.csv].[View_Date]' />
+          <map key='[View_Duration]' value='[content_views.csv].[View_Duration]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[members.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;pt_BR&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;R$&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;pt_BR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[content_views.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;pt_BR&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;R$&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;pt_BR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[contents.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;pt_BR&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;R$&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;pt_BR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[feedbacks.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;pt_BR&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;R$&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;pt_BR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[site_activities.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;pt_BR&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;R$&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;pt_BR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[subscriptions.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;pt_BR&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;R$&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;pt_BR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[transactions.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;pt_BR&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;R$&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;pt_BR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot;.&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID]</local-name>
+            <parent-name>[members.csv]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Name]</local-name>
+            <parent-name>[members.csv]</parent-name>
+            <remote-alias>Name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Email</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Email]</local-name>
+            <parent-name>[members.csv]</parent-name>
+            <remote-alias>Email</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Signup_Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Signup_Date]</local-name>
+            <parent-name>[members.csv]</parent-name>
+            <remote-alias>Signup_Date</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Subscription_Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Subscription_Type]</local-name>
+            <parent-name>[members.csv]</parent-name>
+            <remote-alias>Subscription_Type</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Status]</local-name>
+            <parent-name>[members.csv]</parent-name>
+            <remote-alias>Status</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Country</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Country]</local-name>
+            <parent-name>[members.csv]</parent-name>
+            <remote-alias>Country</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[members.csv]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>City</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[City]</local-name>
+            <parent-name>[members.csv]</parent-name>
+            <remote-alias>City</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID (content_views.csv)]</local-name>
+            <parent-name>[content_views.csv]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Member_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Member_ID (content_views.csv)]</local-name>
+            <parent-name>[content_views.csv]</parent-name>
+            <remote-alias>Member_ID</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Content_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Content_ID]</local-name>
+            <parent-name>[content_views.csv]</parent-name>
+            <remote-alias>Content_ID</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>View_Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[View_Date]</local-name>
+            <parent-name>[content_views.csv]</parent-name>
+            <remote-alias>View_Date</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>View_Duration</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[View_Duration]</local-name>
+            <parent-name>[content_views.csv]</parent-name>
+            <remote-alias>View_Duration</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Interaction_Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Interaction_Type]</local-name>
+            <parent-name>[content_views.csv]</parent-name>
+            <remote-alias>Interaction_Type</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID (contents.csv)]</local-name>
+            <parent-name>[contents.csv]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Title</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Title]</local-name>
+            <parent-name>[contents.csv]</parent-name>
+            <remote-alias>Title</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Type]</local-name>
+            <parent-name>[contents.csv]</parent-name>
+            <remote-alias>Type</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Publication_Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Publication_Date]</local-name>
+            <parent-name>[contents.csv]</parent-name>
+            <remote-alias>Publication_Date</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Author</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Author]</local-name>
+            <parent-name>[contents.csv]</parent-name>
+            <remote-alias>Author</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Category]</local-name>
+            <parent-name>[contents.csv]</parent-name>
+            <remote-alias>Category</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID (feedbacks.csv)]</local-name>
+            <parent-name>[feedbacks.csv]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Member_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Member_ID (feedbacks.csv)]</local-name>
+            <parent-name>[feedbacks.csv]</parent-name>
+            <remote-alias>Member_ID</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Feedback_Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Feedback_Date]</local-name>
+            <parent-name>[feedbacks.csv]</parent-name>
+            <remote-alias>Feedback_Date</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Rating</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Rating]</local-name>
+            <parent-name>[feedbacks.csv]</parent-name>
+            <remote-alias>Rating</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Comment</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Comment]</local-name>
+            <parent-name>[feedbacks.csv]</parent-name>
+            <remote-alias>Comment</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Feedback_Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Feedback_Type]</local-name>
+            <parent-name>[feedbacks.csv]</parent-name>
+            <remote-alias>Feedback_Type</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Support_Response</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Support_Response]</local-name>
+            <parent-name>[feedbacks.csv]</parent-name>
+            <remote-alias>Support_Response</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID (site_activities.csv)]</local-name>
+            <parent-name>[site_activities.csv]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Member_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Member_ID (site_activities.csv)]</local-name>
+            <parent-name>[site_activities.csv]</parent-name>
+            <remote-alias>Member_ID</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Activity_Date</remote-name>
+            <remote-type>135</remote-type>
+            <local-name>[Activity_Date]</local-name>
+            <parent-name>[site_activities.csv]</parent-name>
+            <remote-alias>Activity_Date</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Activity_Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Activity_Type]</local-name>
+            <parent-name>[site_activities.csv]</parent-name>
+            <remote-alias>Activity_Type</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Session_Duration</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Session_Duration]</local-name>
+            <parent-name>[site_activities.csv]</parent-name>
+            <remote-alias>Session_Duration</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Device</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Device]</local-name>
+            <parent-name>[site_activities.csv]</parent-name>
+            <remote-alias>Device</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID (subscriptions.csv)]</local-name>
+            <parent-name>[subscriptions.csv]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Member_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Member_ID (subscriptions.csv)]</local-name>
+            <parent-name>[subscriptions.csv]</parent-name>
+            <remote-alias>Member_ID</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Start_Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Start_Date]</local-name>
+            <parent-name>[subscriptions.csv]</parent-name>
+            <remote-alias>Start_Date</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>End_Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[End_Date]</local-name>
+            <parent-name>[subscriptions.csv]</parent-name>
+            <remote-alias>End_Date</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Subscription_Status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Subscription_Status]</local-name>
+            <parent-name>[subscriptions.csv]</parent-name>
+            <remote-alias>Subscription_Status</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID (transactions.csv)]</local-name>
+            <parent-name>[transactions.csv]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Member_ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Member_ID]</local-name>
+            <parent-name>[transactions.csv]</parent-name>
+            <remote-alias>Member_ID</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Transaction_Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Transaction_Date]</local-name>
+            <parent-name>[transactions.csv]</parent-name>
+            <remote-alias>Transaction_Date</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Amount</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Amount]</local-name>
+            <parent-name>[transactions.csv]</parent-name>
+            <remote-alias>Amount</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Transaction_Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Transaction_Type]</local-name>
+            <parent-name>[transactions.csv]</parent-name>
+            <remote-alias>Transaction_Type</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Payment_Method</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Payment_Method]</local-name>
+            <parent-name>[transactions.csv]</parent-name>
+            <remote-alias>Payment_Method</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Transaction_Status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Transaction_Status]</local-name>
+            <parent-name>[transactions.csv]</parent-name>
+            <remote-alias>Transaction_Status</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LPT_RBR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Activity Date' datatype='datetime' name='[Activity_Date]' role='dimension' type='ordinal' />
+      <column caption='Activity Type' datatype='string' name='[Activity_Type]' role='dimension' type='nominal' />
+      <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Content ID' datatype='integer' name='[Content_ID]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='End Date' datatype='date' name='[End_Date]' role='dimension' type='ordinal' />
+      <column caption='Feedback Date' datatype='date' name='[Feedback_Date]' role='dimension' type='ordinal' />
+      <column caption='Feedback Type' datatype='string' name='[Feedback_Type]' role='dimension' type='nominal' />
+      <column caption='ID (content views.csv)' datatype='integer' name='[ID (content_views.csv)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID (contents.csv)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID (feedbacks.csv)]' role='dimension' type='ordinal' />
+      <column caption='ID (site activities.csv)' datatype='integer' name='[ID (site_activities.csv)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID (subscriptions.csv)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID (transactions.csv)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[ID]' role='dimension' type='ordinal' />
+      <column caption='Interaction Type' datatype='string' name='[Interaction_Type]' role='dimension' type='nominal' />
+      <column caption='Member ID (content views.csv)' datatype='integer' name='[Member_ID (content_views.csv)]' role='dimension' type='ordinal' />
+      <column caption='Member ID (feedbacks.csv)' datatype='integer' name='[Member_ID (feedbacks.csv)]' role='dimension' type='ordinal' />
+      <column caption='Member ID (site activities.csv)' datatype='integer' name='[Member_ID (site_activities.csv)]' role='dimension' type='ordinal' />
+      <column caption='Member ID (subscriptions.csv)' datatype='integer' name='[Member_ID (subscriptions.csv)]' role='dimension' type='ordinal' />
+      <column caption='Member ID' datatype='integer' name='[Member_ID]' role='dimension' type='ordinal' />
+      <column caption='Payment Method' datatype='string' name='[Payment_Method]' role='dimension' type='nominal' />
+      <column caption='Publication Date' datatype='date' name='[Publication_Date]' role='dimension' type='ordinal' />
+      <column caption='Session Duration' datatype='integer' name='[Session_Duration]' role='measure' type='quantitative' />
+      <column caption='Signup Date' datatype='date' name='[Signup_Date]' role='dimension' type='ordinal' />
+      <column caption='Start Date' datatype='date' name='[Start_Date]' role='dimension' type='ordinal' />
+      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Subscription Status' datatype='string' name='[Subscription_Status]' role='dimension' type='nominal' />
+      <column caption='Subscription Type' datatype='string' name='[Subscription_Type]' role='dimension' type='nominal' />
+      <column caption='Support Response' datatype='string' name='[Support_Response]' role='dimension' type='nominal' />
+      <column caption='Transaction Date' datatype='date' name='[Transaction_Date]' role='dimension' type='ordinal' />
+      <column caption='Transaction Status' datatype='string' name='[Transaction_Status]' role='dimension' type='nominal' />
+      <column caption='Transaction Type' datatype='string' name='[Transaction_Type]' role='dimension' type='nominal' />
+      <column caption='View Date' datatype='date' name='[View_Date]' role='dimension' type='ordinal' />
+      <column caption='View Duration' datatype='integer' name='[View_Duration]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='content_views.csv' datatype='table' name='[__tableau_internal_object_id__].[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='contents.csv' datatype='table' name='[__tableau_internal_object_id__].[contents.csv_FC439400F734466C88EAC1771C9F5FE1]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='feedbacks.csv' datatype='table' name='[__tableau_internal_object_id__].[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='members.csv' datatype='table' name='[__tableau_internal_object_id__].[members.csv_712C5F81ABA843CEA595CEB250FDACB6]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='site_activities.csv' datatype='table' name='[__tableau_internal_object_id__].[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='subscriptions.csv' datatype='table' name='[__tableau_internal_object_id__].[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='transactions.csv' datatype='table' name='[__tableau_internal_object_id__].[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]' role='measure' type='quantitative' />
+      <drill-paths>
+        <drill-path name='Country, State, City'>
+          <field>[Country]</field>
+          <field>[State]</field>
+          <field>[City]</field>
+        </drill-path>
+      </drill-paths>
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/alan_/AppData/Local/Temp/TableauTemp/#TableauTemp_1uaeyzt021ej4x10ikfy41b9r9v7.hyper' default-settings='yes' schema='Extract' sslmode='' update-time='07/18/2024 01:23:16 AM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3' table='[Extract].[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='members.csv_712C5F81ABA843CEA595CEB250FDACB6' table='[Extract].[members.csv_712C5F81ABA843CEA595CEB250FDACB6]' type='table' />
+            <relation name='content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3' table='[Extract].[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]' type='table' />
+            <relation name='contents.csv_FC439400F734466C88EAC1771C9F5FE1' table='[Extract].[contents.csv_FC439400F734466C88EAC1771C9F5FE1]' type='table' />
+            <relation name='feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643' table='[Extract].[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]' type='table' />
+            <relation name='site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604' table='[Extract].[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]' type='table' />
+            <relation name='subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E' table='[Extract].[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]' type='table' />
+            <relation name='transactions.csv_EB2E554F615A4FF995963E5EBB5548E2' table='[Extract].[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[Activity_Date]' value='[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604].[Activity_Date]' />
+            <map key='[Activity_Type]' value='[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604].[Activity_Type]' />
+            <map key='[Amount]' value='[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2].[Amount]' />
+            <map key='[Author]' value='[contents.csv_FC439400F734466C88EAC1771C9F5FE1].[Author]' />
+            <map key='[Category]' value='[contents.csv_FC439400F734466C88EAC1771C9F5FE1].[Category]' />
+            <map key='[City]' value='[members.csv_712C5F81ABA843CEA595CEB250FDACB6].[City]' />
+            <map key='[Comment]' value='[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643].[Comment]' />
+            <map key='[Content_ID]' value='[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3].[Content_ID]' />
+            <map key='[Country]' value='[members.csv_712C5F81ABA843CEA595CEB250FDACB6].[Country]' />
+            <map key='[Device]' value='[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604].[Device]' />
+            <map key='[Email]' value='[members.csv_712C5F81ABA843CEA595CEB250FDACB6].[Email]' />
+            <map key='[End_Date]' value='[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E].[End_Date]' />
+            <map key='[Feedback_Date]' value='[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643].[Feedback_Date]' />
+            <map key='[Feedback_Type]' value='[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643].[Feedback_Type]' />
+            <map key='[ID (content_views.csv)]' value='[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3].[ID]' />
+            <map key='[ID (contents.csv)]' value='[contents.csv_FC439400F734466C88EAC1771C9F5FE1].[ID]' />
+            <map key='[ID (feedbacks.csv)]' value='[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643].[ID]' />
+            <map key='[ID (site_activities.csv)]' value='[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604].[ID]' />
+            <map key='[ID (subscriptions.csv)]' value='[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E].[ID]' />
+            <map key='[ID (transactions.csv)]' value='[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2].[ID]' />
+            <map key='[ID]' value='[members.csv_712C5F81ABA843CEA595CEB250FDACB6].[ID]' />
+            <map key='[Interaction_Type]' value='[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3].[Interaction_Type]' />
+            <map key='[Member_ID (content_views.csv)]' value='[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3].[Member_ID]' />
+            <map key='[Member_ID (feedbacks.csv)]' value='[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643].[Member_ID]' />
+            <map key='[Member_ID (site_activities.csv)]' value='[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604].[Member_ID]' />
+            <map key='[Member_ID (subscriptions.csv)]' value='[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E].[Member_ID]' />
+            <map key='[Member_ID]' value='[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2].[Member_ID]' />
+            <map key='[Name]' value='[members.csv_712C5F81ABA843CEA595CEB250FDACB6].[Name]' />
+            <map key='[Payment_Method]' value='[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2].[Payment_Method]' />
+            <map key='[Publication_Date]' value='[contents.csv_FC439400F734466C88EAC1771C9F5FE1].[Publication_Date]' />
+            <map key='[Rating]' value='[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643].[Rating]' />
+            <map key='[Session_Duration]' value='[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604].[Session_Duration]' />
+            <map key='[Signup_Date]' value='[members.csv_712C5F81ABA843CEA595CEB250FDACB6].[Signup_Date]' />
+            <map key='[Start_Date]' value='[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E].[Start_Date]' />
+            <map key='[State]' value='[members.csv_712C5F81ABA843CEA595CEB250FDACB6].[State]' />
+            <map key='[Status]' value='[members.csv_712C5F81ABA843CEA595CEB250FDACB6].[Status]' />
+            <map key='[Subscription_Status]' value='[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E].[Subscription_Status]' />
+            <map key='[Subscription_Type]' value='[members.csv_712C5F81ABA843CEA595CEB250FDACB6].[Subscription_Type]' />
+            <map key='[Support_Response]' value='[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643].[Support_Response]' />
+            <map key='[Title]' value='[contents.csv_FC439400F734466C88EAC1771C9F5FE1].[Title]' />
+            <map key='[Transaction_Date]' value='[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2].[Transaction_Date]' />
+            <map key='[Transaction_Status]' value='[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2].[Transaction_Status]' />
+            <map key='[Transaction_Type]' value='[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2].[Transaction_Type]' />
+            <map key='[Type]' value='[contents.csv_FC439400F734466C88EAC1771C9F5FE1].[Type]' />
+            <map key='[View_Date]' value='[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3].[View_Date]' />
+            <map key='[View_Duration]' value='[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3].[View_Duration]' />
+          </cols>
+          <refresh>
+            <refresh-event add-from-file-path='members_db' increment-value='%null%' refresh-type='create' rows-inserted='4827605' timestamp-start='2024-07-18 01:21:29.790' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ID]</local-name>
+              <parent-name>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</parent-name>
+              <remote-alias>ID</remote-alias>
+              <ordinal>0</ordinal>
+              <family>members.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>200000</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Name]</local-name>
+              <parent-name>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</parent-name>
+              <remote-alias>Name</remote-alias>
+              <ordinal>1</ordinal>
+              <family>members.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>135322</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Email</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Email]</local-name>
+              <parent-name>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</parent-name>
+              <remote-alias>Email</remote-alias>
+              <ordinal>2</ordinal>
+              <family>members.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>167669</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Signup_Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Signup_Date]</local-name>
+              <parent-name>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</parent-name>
+              <remote-alias>Signup_Date</remote-alias>
+              <ordinal>3</ordinal>
+              <family>members.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>3824</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Subscription_Type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Subscription_Type]</local-name>
+              <parent-name>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</parent-name>
+              <remote-alias>Subscription_Type</remote-alias>
+              <ordinal>4</ordinal>
+              <family>members.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Status</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Status]</local-name>
+              <parent-name>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</parent-name>
+              <remote-alias>Status</remote-alias>
+              <ordinal>5</ordinal>
+              <family>members.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Country</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Country]</local-name>
+              <parent-name>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</parent-name>
+              <remote-alias>Country</remote-alias>
+              <ordinal>6</ordinal>
+              <family>members.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>376</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State]</local-name>
+              <parent-name>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</parent-name>
+              <remote-alias>State</remote-alias>
+              <ordinal>7</ordinal>
+              <family>members.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>50</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>City</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[City]</local-name>
+              <parent-name>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</parent-name>
+              <remote-alias>City</remote-alias>
+              <ordinal>8</ordinal>
+              <family>members.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>58976</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[members.csv_712C5F81ABA843CEA595CEB250FDACB6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ID (content_views.csv)]</local-name>
+              <parent-name>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</parent-name>
+              <remote-alias>ID</remote-alias>
+              <ordinal>9</ordinal>
+              <family>content_views.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2497937</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Member_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Member_ID (content_views.csv)]</local-name>
+              <parent-name>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</parent-name>
+              <remote-alias>Member_ID</remote-alias>
+              <ordinal>10</ordinal>
+              <family>content_views.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>676664</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Content_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Content_ID]</local-name>
+              <parent-name>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</parent-name>
+              <remote-alias>Content_ID</remote-alias>
+              <ordinal>11</ordinal>
+              <family>content_views.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>54470</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>View_Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[View_Date]</local-name>
+              <parent-name>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</parent-name>
+              <remote-alias>View_Date</remote-alias>
+              <ordinal>12</ordinal>
+              <family>content_views.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>731</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>View_Duration</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[View_Duration]</local-name>
+              <parent-name>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</parent-name>
+              <remote-alias>View_Duration</remote-alias>
+              <ordinal>13</ordinal>
+              <family>content_views.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>60</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Interaction_Type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Interaction_Type]</local-name>
+              <parent-name>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</parent-name>
+              <remote-alias>Interaction_Type</remote-alias>
+              <ordinal>14</ordinal>
+              <family>content_views.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ID (contents.csv)]</local-name>
+              <parent-name>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</parent-name>
+              <remote-alias>ID</remote-alias>
+              <ordinal>15</ordinal>
+              <family>contents.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>10000</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Title</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Title]</local-name>
+              <parent-name>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</parent-name>
+              <remote-alias>Title</remote-alias>
+              <ordinal>16</ordinal>
+              <family>contents.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>10000</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Type]</local-name>
+              <parent-name>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</parent-name>
+              <remote-alias>Type</remote-alias>
+              <ordinal>17</ordinal>
+              <family>contents.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Publication_Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Publication_Date]</local-name>
+              <parent-name>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</parent-name>
+              <remote-alias>Publication_Date</remote-alias>
+              <ordinal>18</ordinal>
+              <family>contents.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>1041</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Author</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Author]</local-name>
+              <parent-name>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</parent-name>
+              <remote-alias>Author</remote-alias>
+              <ordinal>19</ordinal>
+              <family>contents.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9203</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Category]</local-name>
+              <parent-name>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</parent-name>
+              <remote-alias>Category</remote-alias>
+              <ordinal>20</ordinal>
+              <family>contents.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[contents.csv_FC439400F734466C88EAC1771C9F5FE1]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ID (feedbacks.csv)]</local-name>
+              <parent-name>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</parent-name>
+              <remote-alias>ID</remote-alias>
+              <ordinal>21</ordinal>
+              <family>feedbacks.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>19795</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Member_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Member_ID (feedbacks.csv)]</local-name>
+              <parent-name>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</parent-name>
+              <remote-alias>Member_ID</remote-alias>
+              <ordinal>22</ordinal>
+              <family>feedbacks.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>19795</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Feedback_Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Feedback_Date]</local-name>
+              <parent-name>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</parent-name>
+              <remote-alias>Feedback_Date</remote-alias>
+              <ordinal>23</ordinal>
+              <family>feedbacks.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>1399</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Rating</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Rating]</local-name>
+              <parent-name>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</parent-name>
+              <remote-alias>Rating</remote-alias>
+              <ordinal>24</ordinal>
+              <family>feedbacks.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Comment</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Comment]</local-name>
+              <parent-name>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</parent-name>
+              <remote-alias>Comment</remote-alias>
+              <ordinal>25</ordinal>
+              <family>feedbacks.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>19795</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Feedback_Type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Feedback_Type]</local-name>
+              <parent-name>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</parent-name>
+              <remote-alias>Feedback_Type</remote-alias>
+              <ordinal>26</ordinal>
+              <family>feedbacks.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Support_Response</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Support_Response]</local-name>
+              <parent-name>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</parent-name>
+              <remote-alias>Support_Response</remote-alias>
+              <ordinal>27</ordinal>
+              <family>feedbacks.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>19795</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ID (site_activities.csv)]</local-name>
+              <parent-name>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</parent-name>
+              <remote-alias>ID</remote-alias>
+              <ordinal>28</ordinal>
+              <family>site_activities.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1499969</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Member_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Member_ID (site_activities.csv)]</local-name>
+              <parent-name>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</parent-name>
+              <remote-alias>Member_ID</remote-alias>
+              <ordinal>29</ordinal>
+              <family>site_activities.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>504306</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Activity_Date</remote-name>
+              <remote-type>135</remote-type>
+              <local-name>[Activity_Date]</local-name>
+              <parent-name>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</parent-name>
+              <remote-alias>Activity_Date</remote-alias>
+              <ordinal>30</ordinal>
+              <family>site_activities.csv</family>
+              <local-type>datetime</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>1499969</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Activity_Type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Activity_Type]</local-name>
+              <parent-name>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</parent-name>
+              <remote-alias>Activity_Type</remote-alias>
+              <ordinal>31</ordinal>
+              <family>site_activities.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Session_Duration</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Session_Duration]</local-name>
+              <parent-name>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</parent-name>
+              <remote-alias>Session_Duration</remote-alias>
+              <ordinal>32</ordinal>
+              <family>site_activities.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>180</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Device</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Device]</local-name>
+              <parent-name>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</parent-name>
+              <remote-alias>Device</remote-alias>
+              <ordinal>33</ordinal>
+              <family>site_activities.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ID (subscriptions.csv)]</local-name>
+              <parent-name>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</parent-name>
+              <remote-alias>ID</remote-alias>
+              <ordinal>34</ordinal>
+              <family>subscriptions.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>200000</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Member_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Member_ID (subscriptions.csv)]</local-name>
+              <parent-name>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</parent-name>
+              <remote-alias>Member_ID</remote-alias>
+              <ordinal>35</ordinal>
+              <family>subscriptions.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>200000</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Start_Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Start_Date]</local-name>
+              <parent-name>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</parent-name>
+              <remote-alias>Start_Date</remote-alias>
+              <ordinal>36</ordinal>
+              <family>subscriptions.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>3823</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>End_Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[End_Date]</local-name>
+              <parent-name>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</parent-name>
+              <remote-alias>End_Date</remote-alias>
+              <ordinal>37</ordinal>
+              <family>subscriptions.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>3735</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Subscription_Status</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Subscription_Status]</local-name>
+              <parent-name>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</parent-name>
+              <remote-alias>Subscription_Status</remote-alias>
+              <ordinal>38</ordinal>
+              <family>subscriptions.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ID (transactions.csv)]</local-name>
+              <parent-name>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</parent-name>
+              <remote-alias>ID</remote-alias>
+              <ordinal>39</ordinal>
+              <family>transactions.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>399904</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Member_ID</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Member_ID]</local-name>
+              <parent-name>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</parent-name>
+              <remote-alias>Member_ID</remote-alias>
+              <ordinal>40</ordinal>
+              <family>transactions.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>346006</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Transaction_Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Transaction_Date]</local-name>
+              <parent-name>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</parent-name>
+              <remote-alias>Transaction_Date</remote-alias>
+              <ordinal>41</ordinal>
+              <family>transactions.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>2264</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Amount</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Amount]</local-name>
+              <parent-name>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</parent-name>
+              <remote-alias>Amount</remote-alias>
+              <ordinal>42</ordinal>
+              <family>transactions.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>75491</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Transaction_Type</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Transaction_Type]</local-name>
+              <parent-name>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</parent-name>
+              <remote-alias>Transaction_Type</remote-alias>
+              <ordinal>43</ordinal>
+              <family>transactions.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Payment_Method</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Payment_Method]</local-name>
+              <parent-name>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</parent-name>
+              <remote-alias>Payment_Method</remote-alias>
+              <ordinal>44</ordinal>
+              <family>transactions.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Transaction_Status</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Transaction_Status]</local-name>
+              <parent-name>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</parent-name>
+              <remote-alias>Transaction_Status</remote-alias>
+              <ordinal>45</ordinal>
+              <family>transactions.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LPT_RBR' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Brasil&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='content_views.csv' id='content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3'>
+            <properties context=''>
+              <relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='content_views.csv' table='[content_views#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+                  <column datatype='integer' name='ID' ordinal='0' />
+                  <column datatype='integer' name='Member_ID' ordinal='1' />
+                  <column datatype='integer' name='Content_ID' ordinal='2' />
+                  <column datatype='date' name='View_Date' ordinal='3' />
+                  <column datatype='integer' name='View_Duration' ordinal='4' />
+                  <column datatype='string' name='Interaction_Type' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3' table='[Extract].[content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3]' type='table' />
+            </properties>
+          </object>
+          <object caption='contents.csv' id='contents.csv_FC439400F734466C88EAC1771C9F5FE1'>
+            <properties context=''>
+              <relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='contents.csv' table='[contents#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+                  <column datatype='integer' name='ID' ordinal='0' />
+                  <column datatype='string' name='Title' ordinal='1' />
+                  <column datatype='string' name='Type' ordinal='2' />
+                  <column datatype='date' name='Publication_Date' ordinal='3' />
+                  <column datatype='string' name='Author' ordinal='4' />
+                  <column datatype='string' name='Category' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='contents.csv_FC439400F734466C88EAC1771C9F5FE1' table='[Extract].[contents.csv_FC439400F734466C88EAC1771C9F5FE1]' type='table' />
+            </properties>
+          </object>
+          <object caption='feedbacks.csv' id='feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643'>
+            <properties context=''>
+              <relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='feedbacks.csv' table='[feedbacks#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+                  <column datatype='integer' name='ID' ordinal='0' />
+                  <column datatype='integer' name='Member_ID' ordinal='1' />
+                  <column datatype='date' name='Feedback_Date' ordinal='2' />
+                  <column datatype='integer' name='Rating' ordinal='3' />
+                  <column datatype='string' name='Comment' ordinal='4' />
+                  <column datatype='string' name='Feedback_Type' ordinal='5' />
+                  <column datatype='string' name='Support_Response' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643' table='[Extract].[feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643]' type='table' />
+            </properties>
+          </object>
+          <object caption='members.csv' id='members.csv_712C5F81ABA843CEA595CEB250FDACB6'>
+            <properties context=''>
+              <relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='members.csv' table='[members#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+                  <column datatype='integer' name='ID' ordinal='0' />
+                  <column datatype='string' name='Name' ordinal='1' />
+                  <column datatype='string' name='Email' ordinal='2' />
+                  <column datatype='date' name='Signup_Date' ordinal='3' />
+                  <column datatype='string' name='Subscription_Type' ordinal='4' />
+                  <column datatype='string' name='Status' ordinal='5' />
+                  <column datatype='string' name='Country' ordinal='6' />
+                  <column datatype='string' name='State' ordinal='7' />
+                  <column datatype='string' name='City' ordinal='8' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='members.csv_712C5F81ABA843CEA595CEB250FDACB6' table='[Extract].[members.csv_712C5F81ABA843CEA595CEB250FDACB6]' type='table' />
+            </properties>
+          </object>
+          <object caption='site_activities.csv' id='site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604'>
+            <properties context=''>
+              <relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='site_activities.csv' table='[site_activities#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+                  <column datatype='integer' name='ID' ordinal='0' />
+                  <column datatype='integer' name='Member_ID' ordinal='1' />
+                  <column datatype='datetime' name='Activity_Date' ordinal='2' />
+                  <column datatype='string' name='Activity_Type' ordinal='3' />
+                  <column datatype='integer' name='Session_Duration' ordinal='4' />
+                  <column datatype='string' name='Device' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604' table='[Extract].[site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604]' type='table' />
+            </properties>
+          </object>
+          <object caption='subscriptions.csv' id='subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E'>
+            <properties context=''>
+              <relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='subscriptions.csv' table='[subscriptions#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+                  <column datatype='integer' name='ID' ordinal='0' />
+                  <column datatype='integer' name='Member_ID' ordinal='1' />
+                  <column datatype='date' name='Start_Date' ordinal='2' />
+                  <column datatype='date' name='End_Date' ordinal='3' />
+                  <column datatype='string' name='Subscription_Status' ordinal='4' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E' table='[Extract].[subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E]' type='table' />
+            </properties>
+          </object>
+          <object caption='transactions.csv' id='transactions.csv_EB2E554F615A4FF995963E5EBB5548E2'>
+            <properties context=''>
+              <relation connection='textscan.1e1bmk316qjo461aroytk1dxqoqk' name='transactions.csv' table='[transactions#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='pt_BR'>
+                  <column datatype='integer' name='ID' ordinal='0' />
+                  <column datatype='integer' name='Member_ID' ordinal='1' />
+                  <column datatype='date' name='Transaction_Date' ordinal='2' />
+                  <column datatype='string' name='Amount' ordinal='3' />
+                  <column datatype='string' name='Transaction_Type' ordinal='4' />
+                  <column datatype='string' name='Payment_Method' ordinal='5' />
+                  <column datatype='string' name='Transaction_Status' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='transactions.csv_EB2E554F615A4FF995963E5EBB5548E2' table='[Extract].[transactions.csv_EB2E554F615A4FF995963E5EBB5548E2]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[ID]' />
+              <expression op='[Member_ID (content_views.csv)]' />
+            </expression>
+            <first-end-point object-id='members.csv_712C5F81ABA843CEA595CEB250FDACB6' unique-key='true' />
+            <second-end-point object-id='content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[Content_ID]' />
+              <expression op='[ID (contents.csv)]' />
+            </expression>
+            <first-end-point object-id='content_views.csv_88C2D1391AC545D482E30DD0A2AFE4B3' />
+            <second-end-point object-id='contents.csv_FC439400F734466C88EAC1771C9F5FE1' unique-key='true' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[ID]' />
+              <expression op='[Member_ID (feedbacks.csv)]' />
+            </expression>
+            <first-end-point object-id='members.csv_712C5F81ABA843CEA595CEB250FDACB6' unique-key='true' />
+            <second-end-point object-id='feedbacks.csv_4D2588D7B0D54B88B6CB215BDDA91643' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[ID]' />
+              <expression op='[Member_ID (site_activities.csv)]' />
+            </expression>
+            <first-end-point object-id='members.csv_712C5F81ABA843CEA595CEB250FDACB6' unique-key='true' />
+            <second-end-point object-id='site_activities.csv_0D79C1C2D29A44B289C44227F6EE6604' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[ID]' />
+              <expression op='[Member_ID (subscriptions.csv)]' />
+            </expression>
+            <first-end-point object-id='members.csv_712C5F81ABA843CEA595CEB250FDACB6' unique-key='true' />
+            <second-end-point object-id='subscriptions.csv_8799F12814BB4E85BE49C8104BAFE53E' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[ID]' />
+              <expression op='[Member_ID]' />
+            </expression>
+            <first-end-point object-id='members.csv_712C5F81ABA843CEA595CEB250FDACB6' unique-key='true' />
+            <second-end-point object-id='transactions.csv_EB2E554F615A4FF995963E5EBB5548E2' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Planilha 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='members_db' name='federated.0qa9kbm0uker3219zb0810dww1r0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0qa9kbm0uker3219zb0810dww1r0'>
+            <column datatype='integer' name='[ID]' role='dimension' type='ordinal' />
+            <column-instance column='[ID]' derivation='CountD' name='[ctd:ID:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0qa9kbm0uker3219zb0810dww1r0].[ctd:ID:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{187969B5-D341-4462-A500-6A9CD0BC95A1}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Planilha 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{86ECF5D8-9463-4874-8E85-DEB19474896C}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='24' name='Planilha 1' width='64'>
+      iVBORw0KGgoAAAANSUhEUgAAAEAAAAAYCAYAAABKtPtEAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAADm0lEQVRYhe2WTUgqaxzGn8Q6o2VFtWmkRYuwaBOU4lhK0MJa5KqCalEErcJNUC36WLUM
+      gsiWgUQlgRHRQgQj/JhFBEEfmLVoIY0YFag5OjL6nsXhzEUO3XsXxly4/mAWM3/e5334De8w
+      FYQQgv8xCrkLyE1ZgNwF5KYsQO4CclMWIHcBuSkLkLuA3JQFyF1AbsoC5C4gNyUTwHEc5ufn
+      wTAMGIbB6uoqeJ4HABQKBRwfH8NisYBhGGxsbCCXy0lrQ6EQBgcHYTAYsLi4iGQy+Ud+LpfD
+      zs4OGIaBxWLB/v4+CoXCv8p4fHzE6OgoDAYDpqenEYvFSiuA53lsb2/DarXC7/fD5/Ohvr4e
+      JycnAIC7uzv4fD64XC54vV68vr7C4/FI4vb29rC5uQm/3w+tVgun0/nHHufn54hGo/B6vXC5
+      XAgEAri+vv7HjHQ6DYfDAbvdDpZlMTQ0hK2tLYiiWDoBFEVhfX0dVqsVlZWVUKvVGBgYkN7Q
+      xcUFxsbGQNM0NBoNZmZmcHV1BVEUcXl5CZPJhI6ODlAUhYmJCUSj0aJ8URTBsiympqag0WhA
+      0zTGx8cRCoUA4MuMRCKB+/t70DSNvr4+KJVK2Gw2VFRUgOO40glQKBRQKP6K4nkeZ2dn6Orq
+      AgBks1m0trZKc61Wi5qaGmQyGSQSCbS3t0uzxsZGNDU1FeULggCKotDc3Cw9a2trQzabRaFQ
+      +DIjnU4jmUxCp9NJ/VQqFXQ6HT4+PgAAylIIAH6dc4/Hg9vbW9jtdqysrJQq+lsp2UeQZVnE
+      YjEsLCxArVYXzSiKwvPzs3T/8vKCz89PqFQq1NXV4eHhQZq9v7/j7e2taP2PHz+QzWaLPl5P
+      T0+gKAoKheLLjOrqatTW1iISiUjHMZPJIBKJoKGhoXQCBEFAIBCAzWYrOgq/6e/vx9HRETiO
+      QyqVwu7uLnp6eqBUKmEwGMCyLMLhMLLZLA4ODtDS0lK0XqlUwmQywel0IpVKgeM4HB4eore3
+      FwC+zKirq0NnZyc4jkMwGIQoijg9PQUhBDRN/wonJSAej5Ph4WHS3d1ddC0tLRFCCMnn88Tt
+      dhOz2UyMRiNxOBxEEARpfTAYJFarlej1erK8vEzS6TTheZ7Mzc2RUChECCFEEATicDiI0Wgk
+      ZrOZuN1uks/n/zbjN5FIhIyMjBC9Xk9mZ2dJPB6XZiUR8B2Ew2GytrZWJOo7+M/+Cd7c3GBy
+      chJVVVXfus9PWw4rEtF0pxUAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
